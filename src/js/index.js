@@ -1,16 +1,16 @@
 //import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
-import {proto } 
-// include your styles into the webpack bundle
-import from 'relative/path/to/stylesheet.scss
+import Home from "./component/home";
 
-function SimpleCounter(props){
-    return(<div className="bigCounter">
+
+
+const Digit = (props) => {
+    return(<div className="wrapper">
         <div className="four">{props.digitFour}</div>
         <div className="three">{props.digitThree}</div>
         <div className="two">{props.digitTwo}</div>
-        <div className="one">{props.digitOne}</div>
+        <Digit digit {(Math.floor(props.time/10))%10}/>
     </div>);
 }
 
@@ -27,7 +27,13 @@ setInterval (function(){
     const two = Math.floor(counter/10);
     const one = Math.floor(counter/1);
 })
-ReactDOM.render(<SimpleCounter/>, document.getElementById("root"));
+
+let timer  = 0
+setInterval(()=>{
+    ReactDOM.render(<Home time={timer}/>, document.getElementById("#app"));
+timer ++
+}, 1000)
+
 
 // cuatro o 5 components const for each digit)componentete sueltos, invidual 
 // 1 var contantdo, vuelve a 0 (contador del anterior (por su digito))
