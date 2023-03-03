@@ -1,20 +1,10 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
-
-.bigCounter {
-    text-align: center;
-}
-
-.bigCounter div {
-    display: inline-block;
-    font-size: 20px;
-    line-height: 20px;
-    background: white;
-}
 .wrapper{
     display: flex;
 }
 
-.digit-box {
+.digit-box{
     padding: 2rem;
     margin: 1rem 0.5rem;
+    border: 1px solid black;
+    background-color: grey;
 }
